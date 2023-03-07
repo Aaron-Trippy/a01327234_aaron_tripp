@@ -69,7 +69,7 @@ export default function Home() {
                     ></span>
                   }
                   price={
-                    <span className={styles.productPrice}>{item.cost}</span>
+                    <span className={styles.productPrice}>${item.cost}</span>
                   }
                 />
               ))}
