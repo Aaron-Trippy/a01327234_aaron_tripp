@@ -137,7 +137,7 @@ export default function Filter({ setProducts }) {
         </div>
 
         <div
-          className={styles.item}
+          className={styles.itemspc}
           data-category="All"
           data-sex="All"
           onClick={handleFilter}
