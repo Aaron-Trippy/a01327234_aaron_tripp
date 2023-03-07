@@ -28,50 +28,92 @@ export default function Filter({ setProducts }) {
         <div
           className={styles.item}
           data-category="All"
-          data-sex="All"
+          data-sex="Male"
           onClick={handleFilter}
+          style={{ fontWeight: "bold" }}
         >
-          Clear Filters
+          Male
         </div>
         <div
           className={styles.item}
           data-category="Hoodies"
           data-sex="Male"
           onClick={handleFilter}
+          style={{ textIndent: "20px" }}
         >
-          Male Hoodies
+          Hoodies
+        </div>
+        <div
+          className={styles.item}
+          data-category="Jackets"
+          data-sex="Male"
+          onClick={handleFilter}
+          style={{ textIndent: "20px" }}
+        >
+          Jackets
+        </div>
+        <div
+          className={styles.item}
+          data-category="Headgear"
+          data-sex="Male"
+          onClick={handleFilter}
+          style={{ textIndent: "20px" }}
+        >
+          Headgear
+        </div>
+        <div
+          className={styles.item}
+          data-category="All"
+          data-sex="Female"
+          onClick={handleFilter}
+          style={{ fontWeight: "bold" }}
+        >
+          Female
         </div>
         <div
           className={styles.item}
           data-category="Hoodies"
           data-sex="Female"
           onClick={handleFilter}
+          style={{ textIndent: "20px" }}
         >
-          Female Hoodies
+          Hoodies
+        </div>
+        <div
+          className={styles.item}
+          data-category="Jackets"
+          data-sex="Female"
+          onClick={handleFilter}
+          style={{ textIndent: "20px" }}
+        >
+          Jackets
+        </div>
+        <div
+          className={styles.item}
+          data-category="Headgear"
+          data-sex="Female"
+          onClick={handleFilter}
+          style={{ textIndent: "20px" }}
+        >
+          Headgear
+        </div>
+        <div
+          className={styles.item}
+          data-category="All"
+          data-sex="Unisex"
+          onClick={handleFilter}
+          style={{ fontWeight: "bold" }}
+        >
+          Unisex
         </div>
         <div
           className={styles.item}
           data-category="Hoodies"
           data-sex="Unisex"
           onClick={handleFilter}
+          style={{ textIndent: "20px" }}
         >
-          Unisex Hoodies
-        </div>
-        <div
-          className={styles.item}
-          data-category="Jackets"
-          data-sex="Male"
-          onClick={handleFilter}
-        >
-          Male Jackets
-        </div>
-        <div
-          className={styles.item}
-          data-category="Jackets"
-          data-sex="Female"
-          onClick={handleFilter}
-        >
-          Female Jackets
+          Hoodies
         </div>
       </div>
       <div className={styles.category}>
@@ -80,40 +122,28 @@ export default function Filter({ setProducts }) {
           data-category="Jackets"
           data-sex="Unisex"
           onClick={handleFilter}
+          style={{ textIndent: "20px" }}
         >
-          Unisex Jackets
+          Jackets
         </div>
         <div
           className={styles.item}
           data-category="Headgear"
           data-sex="Unisex"
           onClick={handleFilter}
+          style={{ textIndent: "20px" }}
         >
-          Unisex Headgear
+          Headgear
         </div>
+
         <div
           className={styles.item}
           data-category="All"
-          data-sex="Male"
+          data-sex="All"
           onClick={handleFilter}
+          style={{ fontSize: "0.8em", marginTop: "20px", fontWeight: "bold" }}
         >
-          Male All
-        </div>
-        <div
-          className={styles.item}
-          data-category="All"
-          data-sex="Female"
-          onClick={handleFilter}
-        >
-          Female All
-        </div>
-        <div
-          className={styles.item}
-          data-category="All"
-          data-sex="Unisex"
-          onClick={handleFilter}
-        >
-          Unisex All
+          Clear Filters
         </div>
       </div>
     </div>

@@ -37,22 +37,43 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Image src="/logo/logo.png" objectFit="cover" width="250" height="38" />
-      <div className={styles.headerLine}></div>
-
       <main className={styles.main}>
-        <h1 className={styles.sectionHead}>Filter By</h1>
-        <Filter setProducts={setProducts} updateProducts={updateProducts} />
-        <div className={styles.productContainer}>
-          {products &&
-            products.map((item, index) => (
-              <Product
-                key={index}
-                img={item.image}
-                tag={<span className={styles.productTitle}>{item.title}</span>}
-                price={<span className={styles.productPrice}>{item.cost}</span>}
-              />
-            ))}
+        <Image src="/logo/logo.png" objectFit="cover" width="250" height="38" />
+        <div className={styles.headerLine}></div>
+
+        <div className={styles.largeContainer}>
+          <div className={styles.filterMenu}>
+            <h1 className={styles.sectionHead}>Filters</h1>
+            <Filter setProducts={setProducts} updateProducts={updateProducts} />
+          </div>
+
+          <div className={styles.productContainer}>
+            {products &&
+              products.map((item, index) => (
+                <Product
+                  key={index}
+                  img={item.image}
+                  tag={
+                    <span className={styles.productTitle}>{item.title}</span>
+                  }
+                  hex={
+                    <span
+                      className={styles.productHex}
+                      style={{
+                        display: "inline-block",
+                        width: "20px",
+                        height: "20px",
+                        borderRadius: "50%",
+                        backgroundColor: item.hex,
+                      }}
+                    ></span>
+                  }
+                  price={
+                    <span className={styles.productPrice}>{item.cost}</span>
+                  }
+                />
+              ))}
+          </div>
         </div>
       </main>
     </>

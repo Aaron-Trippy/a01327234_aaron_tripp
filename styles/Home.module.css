@@ -1,10 +1,10 @@
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 6rem;
   min-height: 100vh;
+  padding-top: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
 }
 
 .logo {
@@ -17,5 +17,37 @@
   left: 0;
   right: 0;
   background-color: #eaeaea;
-  margin-top: 3px;
+  margin-top: 1rem;
+}
+
+.largeContainer {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.filterMenu {
+  width: auto;
+  margin-right: 20%;
+  padding: 10px;
+  padding-right: 30px;
+  border: 1px solid;
+  border-radius: 10px;
+  border-color: #eaeaea;
+  border-left: hidden;
+  border-bottom: hidden;
+}
+
+.productContainer {
+  display: flex;
+  flex-flow: row wrap;
+  width: 50%;
+  gap: 10px;
+}
+
+.productTitle {
+  font-weight: bold;
+}
+
+.productPrice {
+  color: rgb(70, 70, 70);
 }
