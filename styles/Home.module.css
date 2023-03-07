@@ -6,3 +6,16 @@
   padding: 6rem;
   min-height: 100vh;
 }
+
+.logo {
+  transform: scale(2);
+}
+
+.headerLine {
+  width: 100vw;
+  height: 2px;
+  left: 0;
+  right: 0;
+  background-color: #eaeaea;
+  margin-top: 3px;
+}

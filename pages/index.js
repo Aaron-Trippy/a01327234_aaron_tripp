@@ -36,6 +36,10 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <Image src="/logo/logo.png" objectFit="cover" width="250" height="38" />
+      <div className={styles.headerLine}></div>
+
       <main className={styles.main}>
         <h1 className={styles.sectionHead}>Filter By</h1>
         <Filter setProducts={setProducts} updateProducts={updateProducts} />
