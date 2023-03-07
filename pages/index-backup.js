@@ -5,28 +5,11 @@ import { inventory } from "@/data/inventory";
 import { useState } from "react";
 import { useEffect } from "react";
 import Product from "@/components/Product";
-import Filter from "@/components/Filter";
 
 export default function Home() {
-  const [products, setProducts] = useState(inventory.clothing);
-
-  const updateProducts = (category, sex) => {
-    let newProducts = [];
-    if (category === "All" && sex === "All") {
-      newProducts = inventory.clothing;
-    } else if (category === "All") {
-      newProducts = inventory.clothing.filter((product) => product.sex === sex);
-    } else if (sex === "All") {
-      newProducts = inventory.clothing.filter(
-        (product) => product.category === category
-      );
-    } else {
-      newProducts = inventory.clothing.filter(
-        (product) => product.category === category && product.sex === sex
-      );
-    }
-    setProducts(newProducts);
-  };
+  const [products, setProducts] = useState([...inventory.clothing]);
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const [selectedSex, setSelectedSex] = useState("");
 
   return (
     <>
@@ -38,7 +21,6 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <h1 className={styles.sectionHead}>Filter By</h1>
-        <Filter setProducts={setProducts} updateProducts={updateProducts} />
         <div className={styles.productContainer}>
           {products &&
             products.map((item, index) => (
