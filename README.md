@@ -1,123 +1,81 @@
-# Data file
-- call the file `inventory.js`
+## Primary index.js page
+This is the primary index.js page for the website. It is responsible for rendering the home page and displaying a list of products based on filters selected by the user.
 
-## Inside the data file
-- create a constant called `inventory` that will be exported. This variable will contain an object.
-- The first key is `company` which will have the value `BCITSA Geared Up`
-- The second key is `clothing` which will contained in an array with objects of information.
+# Dependencies
+This page imports the following dependencies:
 
+- Head from next/head: for setting metadata in the header of the page
+- Image from next/image: for rendering the logo image
+- styles from @/styles/Home.module.css: for styling the page
+- inventory from @/data/inventory: for storing product data
+- useState from react: for managing state variables
+- useEffect from react: for performing side effects such as fetching data
+- Product from @/components/Product: for rendering individual products
+- Filter from @/components/Filter: for rendering filter options
 
-```
-clothing: [
-    {
+# Functions
+updateProducts(category, sex)
+This function takes in two arguments: category and sex. It then filters the list of products based on the values of these arguments and sets the filtered products to - the state variable products. The function is called whenever the filter options are changed.
 
-    }
-    {
+# Components
+<Head>
+This component sets the metadata for the page including the title, description, viewport, and favicon.
 
-    }
-    .
-    .
-    .
-    etc
-]
-```
-### The keys in each object are in the following order:
-1. category
-2. sex
-3. title
-4. colours
-5. hex
-6. image
-7. cost
+<Image>
+This component renders the logo image for the store.
 
-### Here are the key value pairs you need to setup in each of the objects:
+<Filter>
+This component renders the filter options for the store. It takes in the setProducts and updateProducts functions as props.
 
-#### Object 1
-Hoodies
-Female
-Russell Athletic Hood
-`put this in an array:` black, charcoal, green, grey, maroon, navy
-`put this in an array:` #000, #3E464B, #24564A, #B4B8B9, #5F3A42, #313F4F
-`you can use any image/images you would like for this that is provided to you and matches the description:` products/hoodies/russell_athletic_hood_black.png
-69.99
+<Product>
+This component renders an individual product item with its image, title, hex code, and price.
 
-#### Object 2
-category: "Hoodies",
-Male
-Aerospace
-`put this in an array:` black, navy
-`put this in an array:` #000, #313F4F
-`you can use any image/images you would like for this that is provided to you and matches the description:` products/hoodies/hood_aerospace_black.png
-59.99
+styles
+This module contains the CSS styles for the page including the layout, fonts, colors, and responsive design.
 
-#### Object 3
-category: "Hoodies",
-Female
-Classic Avalon Fleece Hoodie
-`put this in an array:` black, navy
-`put this in an array:` #000, #313F4F
-`you can use any image/images you would like for this that is provided to you and matches the description:` products/hoodies/classic_avalon_fleece_hoodie_black.png
-57.99
+Filter Component
+This is the index.js page for the Filter Component. It is responsible for rendering the filter options for the store.
 
-#### Object 4
-Hoodies
-Unisex
-Champion Full-Zup Hoodie
-`put this in an array:` black, grey, maroon, navy, green
-`put this in an array:` #000, #B4B8B9, #5F3A42, #313F4F, #24564A
-`you can use any image/images you would like for this that is provided to you and matches the description:` products/hoodies/champion_full_zip_hoodie_black.png
-79.99
+Dependencies
+This page imports the following dependencies:
 
-#### Object 5
-Hoodies
-Male
-Forestry
-`put this in an array:` green
-`put this in an array:` #24564A
-`you can use any image/images you would like for this that is provided to you and matches the description:` products/hoodies/hoodie_forestry_green.png,
-59.99
+styles from @/components/Filter/Filter.module.css: for styling the component
+inventory from @/data/inventory: for storing product data
+Functions
+handleFilter(event)
+This function takes in an event object as an argument. It then extracts the values of the selected filter options and filters the list of products based on these values. Finally, it sets the filtered products to the state variable products. The function is called whenever a filter option is changed.
 
-#### Object 6
-Jackets
-Male
-Waterproof Jacket
-`put this in an array:` black, graphite, navy
-`put this in an array:` #000, #69686D, #313F4F
-`you can use any image/images you would like for this that is provided to you and matches the description:` products/jackets/waterproof_jacket_black.png
-79.99
+## Filter Component
+The Filter component allows users to filter a list of items based on a search query. It is a controlled component, meaning that its state is controlled by its parent component via props.
 
-#### Object 7
-Jackets
-Female
-Soft Shell Hooded Jacket
-`put this in an array:` black, navy
-`put this in an array:` #000, #313F4F
-`you can use any image/images you would like for this that is provided to you and matches the description:` products/jackets/soft_shell_hooded_jacket_black.png
-82.99
+# Props
+The following props are available for the Filter component:
 
-#### Object 8
-Headgear
-Unisex
-Legacy Adjustable Hat
-`put this in an array:` navy, stone, burgundy, slate blue, grey
-`put this in an array:` #25242D, #DBDCD7, #7F2430, #595B76, #685E66
-`you can use any image/images you would like for this that is provided to you and matches the description:` products/headgear/legacy_adjustable_hat_navy.png
-29.99
+value (string, required): The current search query value.
+onChange (function, required): A callback function to be executed whenever the search query value changes.
+placeholder (string, optional): The placeholder text to display when the search input is empty.
+className (string, optional): Additional CSS classes to apply to the component for styling purposes.
 
-#### Object 9
-Headgear
-Unisex
-Legacy Hat Trucker
-`put this in an array:` black/cardinal, black/orange, black/green, "navy/gold"
-`put this in an array:` #5C5A4D, #CA5927, #43483B, #F9BE14
-`you can use any image/images you would like for this that is provided to you and matches the description:` products/headgear/legacy_hat_trucker_black_cardinal.png
-36.99
+# How it Works
+The Filter component is a controlled component that renders an <input> element with the type search. It listens to the onChange event of this input, which triggers the execution of the onChange function passed to it via props. This function updates the search query value in the parent component's state, triggering a re-render of the parent component and allowing it to filter its list of items based on the updated search query value.
 
-#### Object 10
-Headgear,
-Unisex,
-Legacy Toque,
-`put this in an array:` black
-`put this in an array:` #000
-`you can use any image/images you would like for this that is provided to you and matches the description:` products/headgear/legacy_toque_black.png
-34.99
+## Product
+The Product component is a reusable component that displays product information, such as a product image, name, and price.
+
+# Props
+The Product component accepts the following props:
+
+- product: (required) An object containing the product information. It should have the following properties:
+- id: (required) A unique identifier for the product.
+- name: (required) The name of the product.
+- description: (optional) A description of the product.
+- price: (required) The price of the product, in cents.
+- imageUrl: (required) The URL of an image of the product.
+- onClick: (optional) A function to be called when the product is clicked.
+
+# How it works
+The Product component is implemented as a functional component using React hooks. It uses the product prop to display the product information, and the onClick prop to add click functionality to the component.
+
+The component is styled using CSS modules, with styles defined in a separate Product.module.css file. The component's image is loaded using the img HTML element, with the src attribute set to the imageUrl prop.
+
+When the component is clicked, the onClick function (if provided) is called with the product information as an argument.
