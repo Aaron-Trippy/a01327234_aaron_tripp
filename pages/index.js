@@ -56,18 +56,7 @@ export default function Home() {
                   tag={
                     <span className={styles.productTitle}>{item.title}</span>
                   }
-                  hex={
-                    <span
-                      className={styles.productHex}
-                      style={{
-                        display: "inline-block",
-                        width: "20px",
-                        height: "20px",
-                        borderRadius: "50%",
-                        backgroundColor: item.hex,
-                      }}
-                    ></span>
-                  }
+                  colour={item.hex}
                   price={
                     <span className={styles.productPrice}>${item.cost}</span>
                   }
