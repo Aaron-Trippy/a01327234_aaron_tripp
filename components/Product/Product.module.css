@@ -17,3 +17,17 @@
     transform: scale(1.02);
     transition-duration: 300ms;
 }
+
+/* Tablet portrait */
+@media only screen and (max-width: 768px) {
+    .main {
+        width: 45%;
+    }
+  }
+
+  /* Mobile portrait */
+@media only screen and (max-width: 414px) {
+    .main {
+        width: 90%;
+    }
+  }
